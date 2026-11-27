@@ -1,0 +1,5 @@
+-r requirements.txt
+h3==4.2.2
+openai>=1.0,<3
+sentence-transformers>=3.4,<4
+transformers>=4.45,<4.52

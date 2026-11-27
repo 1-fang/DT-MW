@@ -1,0 +1,33 @@
+{
+  "scenarios": [
+    {
+      "name": "normal",
+      "instruction": "Standard operation. Balance order response coverage and platform revenue evenly.",
+      "beta": [0.4, 0.4, 0.2],
+      "label": 0
+    },
+    {
+      "name": "surge",
+      "instruction": "High demand surge period with severe supply shortage. Prioritize order response coverage while maintaining revenue.",
+      "beta": [0.2, 0.6, 0.2],
+      "label": 1
+    },
+    {
+      "name": "blizzard",
+      "instruction": "Severe weather conditions. Prioritize order response rate and service coverage for passenger safety.",
+      "beta": [0.2, 0.6, 0.2],
+      "label": 2
+    },
+    {
+      "name": "vip",
+      "instruction": "VIP priority event. Focus on matching high-value VIP orders to maximize gross merchandise value.",
+      "beta": [0.8, 0.1, 0.1],
+      "label": 3
+    }
+  ],
+  "switch_probability": 0.3,
+  "manager_update_interval": 3,
+  "intrinsic_weight": 0.1,
+  "contrastive_weight": 0.1,
+  "contrastive_temperature": 0.07
+}

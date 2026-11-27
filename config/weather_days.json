@@ -1,0 +1,51 @@
+{
+  "days": [
+    {
+      "name": "Jan05_normal",
+      "date": "2015-01-05",
+      "data_file": "NYC2015Jan05_h3_289_real_orders.pkl",
+      "scenario": "normal",
+      "weather_description": "Clear cold winter Monday in New York City. Temperature -1°C, light wind, dry roads. Normal weekday commuter demand. Standard platform operations with balanced supply and demand.",
+      "beta_hint": [0.4, 0.4, 0.2],
+      "note": "Regular Monday, baseline normal scenario"
+    },
+    {
+      "name": "Jan06_cold",
+      "date": "2015-01-06",
+      "data_file": "NYC2015Jan06_h3_289_real_orders.pkl",
+      "scenario": "normal",
+      "weather_description": "Cold clear Tuesday in New York City. Temperature -2°C, calm conditions, slightly colder than average. Normal weekday demand with typical morning and evening rush patterns.",
+      "beta_hint": [0.4, 0.4, 0.2],
+      "note": "Regular Tuesday, slightly colder"
+    },
+    {
+      "name": "Jan06_vip",
+      "date": "2015-01-06",
+      "data_file": "NYC2015Jan06_h3_289_vip.pkl",
+      "scenario": "vip",
+      "weather_description": "High-value VIP event day in New York City. Premium corporate events and luxury rides dominate demand. Average trip value nearly double normal rates. VIP clients require priority service and high reliability. Revenue maximization is the primary objective.",
+      "beta_hint": [0.7, 0.2, 0.1],
+      "note": "VIP scenario: 2x average price ($18 vs $9.5), max fare $1500"
+    },
+    {
+      "name": "Jan22-24_surge",
+      "date": "2015-01-22",
+      "data_file": "NYC2015Jan22-24_h3_289_real_orders.pkl",
+      "scenario": "surge",
+      "weather_description": "High-demand surge period spanning Thursday through Saturday in New York City. Weekend activity combined with indoor events drives order volume to 3.6 times normal levels. Extreme supply shortage relative to demand. Maximizing order response rate is critical to maintain platform reputation.",
+      "beta_hint": [0.2, 0.6, 0.2],
+      "note": "Surge: 8549 orders/step vs 2344 normal (3.6x), Thu-Sat high demand"
+    },
+    {
+      "name": "Jan26_blizzard",
+      "date": "2015-01-26",
+      "data_file": "NYC2015Jan26_h3_289_real_orders.pkl",
+      "scenario": "blizzard",
+      "weather_description": "Severe Blizzard Juno strikes New York City. Historic snowstorm with over 60 centimeters of snowfall. Governor declared state of emergency. All roads officially closed by 11pm. Near-zero visibility, dangerous travel conditions. Order volume drops to lowest of the month. Stranded passengers urgently need rides. Ensuring response coverage is the top priority.",
+      "beta_hint": [0.2, 0.7, 0.1],
+      "note": "Blizzard Juno: 1409 orders/step (lowest), real extreme event Jan 26-27 2015"
+    }
+  ],
+  "sample_weights": [0.25, 0.15, 0.2, 0.2, 0.2],
+  "comment": "5 distinct scenarios covering full range: normal(2) + VIP + surge + blizzard. Weights give each non-normal scenario ~20% chance so Manager sees diverse training signal."
+}
